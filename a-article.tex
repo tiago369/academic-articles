@@ -50,9 +50,10 @@
 
 \begin{document}
 
-\title{Course Paper Title*\\
-{\footnotesize \textsuperscript{*} Sistemas Embarcados: Prof. Marco Reis - marco.reis@ba.docente.senai.brr}
-\thanks{Identify applicable funding agency here. If none, delete this.}
+\title{Controle de braços robóticos auxiliados por visão computacional.
+% \\
+% {\footnotesize \textsuperscript{*} Sistemas Embarcados: Prof. Marco Reis - marco.reis@ba.docente.senai.brr}
+% \thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
 % \author{\IEEEauthorblockN{Marco Reis, 41650-010\IEEEauthorrefmark{1}}
@@ -60,58 +61,56 @@
 % Senai Cimatec, Salvador, Brazil}% <-this % stops an unwanted space
 
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{\IEEEauthorblockN{Marco Reis}
+\IEEEauthorblockA{\textit{SENAI CIMATEC} \\
+% \textit{name of organization (of Aff.)}\\
+Salvador, Brasil \\
+marco.reis@aln.senaicimatec.edu.br}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Icaro Borges de Macedo (orientador)}
+\IEEEauthorblockA{\textit{SENAI CIMATEC} \\
+% \textit{name of organization (of Aff.)}\\
+Salvador, Brasil \\
+icaro.macedo@fieb.org.br}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Tiago Barretto Sant’Anna}
+\IEEEauthorblockA{\textit{SENAI CIMATEC} \\
+% \textit{name of organization (of Aff.)}\\
+Salvador, Brasil\\
+tiago.sant'anna@ba.estudante.senai.br}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Samuel Luiz Silva Santana }
+\IEEEauthorblockA{\textit{SENAI CIMATEC} \\
+% \textit{name of organization (of Aff.)}\\
+Salvador, Brasil \\
+samuel.santana@ba.estudante.senai.br}
 \and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+% \IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
+% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% % \textit{name of organization (of Aff.)}\\
+% City, Country \\
+% email address or ORCID}
+% \and
+% \IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% \textit{name of organization (of Aff.)}\\
+% City, Country \\
+% email address or ORCID}
 }
 
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+O objetivo deste artigo é expor os problemas na automação dentro da área da robótica industrial e trabalhar para consertar esse fato. Portanto visando tornar a tecnologia robótica mais autônoma, mais especificamente os braços robóticos, desenvolvemos esse artigo que visa interromper a dependência de uma programação que limita esses robôs a fazer apenas movimentos repetitivos com peças específicas sem nenhuma capacidade de realizar outros movimentos além daqueles pré-programados. Sabemos que esse é um problema que depende de um grande acúmulo de conhecimento antes de poder ser solucionado, devido a esse fato decidimos realizar pesquisas sobre o assunto e desenvolver resultados utilizando a visão computacional. Esses resultados devem impactar diretamente no dia-a-dia da indústria, pois irá reduzir a necessidade de programar novamente um robô para cada mudança em sua função.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+robótica, mecatrônica, manipuladores, visão computacional.
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+
+A robótica é uma área em crescimento no mundo, podendo se expandir até 10 vezes mais na última década \cite{Roboticonline}. Esse aumento se dá principalmente na indústria, onde o uso da robótica gera um maior aumento da produtividade \cite{robotica1}. Desse modo, é uma área que necessita de constantes avanços tecnológicos para suprir essa demanda. Porém, um problema encontrado na robótica industrial é que sua automação não consegue ser independente o suficiente. Quando se programa um braço robótico ele pode fazer o mesmo movimento diversas vezes de forma autônoma, entretanto caso a peça a ser manipulada seja deslocada, o braço não tem capacidade, de forma autônoma, de alterar sua trajetória para poder trabalhar com ela. Assim, como fazer com que um braço robótico possa pegar objetos específicos, independente de suas posições no espaço? Dessa maneira, o objetivo desse artigo é estudar e criar um braço robótico cuja função é coletar objetos, independente de qual posição eles estejam, fazendo o uso de visão computacional. Os objetivos específicos desse artigo, são o estudo e geração do reconhecimento de peças com visão computacional, a cinemática do manipulador, a programação do manipulador e a integração da câmera com o braço robótico.  A importância desse procedimento tem como consequência uma diminuição na necessidade de reprogramação desses braços robóticos, irá facilitar a programação para poder realizar tarefas ainda mais complexas, fornecendo assim economia e efetividade. Dessa forma será realizada uma pesquisa bibliográfica, acerca de braços robóticos, visão computacional e cinemática. Esse trabalho é uma pesquisa aplicada, com objetivo exploratório, por uma abordagem qualitativa.
 
 \section{Ease of Use}
 
