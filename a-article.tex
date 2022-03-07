@@ -138,6 +138,20 @@ A figura \ref{fig:tags} mostra um exemplo dessas tags. Elas possuem padrões que
 
 Por questão de praticidade foi decidido usar uma webcam para captar as imagens do ambiente, essa camera sera colocada na parte sinalizada no braço robótico, explicitado na figura \ref{fig:cam_arm}. Assim será processado para onde a ferramenta esta direcionada.
 
+\subsubsection{Calibração da camera}
+
+A calibração é uma parte fundamental para conseguir parâmetros fundamentais de uma camera, com esses dados se consegue determinar onde esta um ponto 3D no espaço \cite{ArUco}. Isso é feito para obter valores, como o de pixels da camera, coeficientes de distorção e centro óptico do sensor \cite{ArUco}.
+
+\begin{figure}[h!]
+    \centering
+        \includegraphics[width=9cm]{images/calibration.png}
+    \caption{Calibração}
+    \label{fig:calibration}
+\end{figure}
+
+Dessa forma a calibração foi feita usando o \textit{ROS Noetic}, com um pacote especifico para calibração \cite{camera_calibration:online} e um pacote próprio para conectar a webcam no pc \cite{usbcamRO60:online}. Parte do processo da calibração pode ser mostrado na imagem \ref{fig:calibration}. Com esse processo foi gerado um arquivo comprimido com todas as informações necessárias para configurar a camera. Assim foi finalizado essa etapa do processo
+
+% -------------------------------------------------------------------
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
 separate text file. Complete all content and organizational editing before 
@@ -333,8 +347,8 @@ citation first, followed by the original foreign-language citation \cite{yorozu1
 %CRITICAL: do not change the above two lines!!!
 %----------------------------------------------------------
 
-\vspace{12pt}
-\color{red}
-Course templates contain guidance text for composing and formatting Course papers. Please ensure that all template text is removed from your course paper prior to submission to the lecturer. Failure to remove the template text from your paper may result in your paper not being accepted.
+% \vspace{12pt}
+% \color{red}
+% Course templates contain guidance text for composing and formatting Course papers. Please ensure that all template text is removed from your course paper prior to submission to the lecturer. Failure to remove the template text from your paper may result in your paper not being accepted.
 
 \end{document}
