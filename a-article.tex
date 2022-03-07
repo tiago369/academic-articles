@@ -112,17 +112,31 @@ robótica, mecatrônica, manipuladores, visão computacional.
 
 A robótica é uma área em crescimento no mundo, podendo se expandir até 10 vezes mais na última década \cite{Roboticonline}. Esse aumento se dá principalmente na indústria, onde o uso da robótica gera um maior aumento da produtividade \cite{robotica1}. Desse modo, é uma área que necessita de constantes avanços tecnológicos para suprir essa demanda. Porém, um problema encontrado na robótica industrial é que sua automação não consegue ser independente o suficiente. Quando se programa um braço robótico ele pode fazer o mesmo movimento diversas vezes de forma autônoma, entretanto caso a peça a ser manipulada seja deslocada, o braço não tem capacidade, de forma autônoma, de alterar sua trajetória para poder trabalhar com ela. Assim, como fazer com que um braço robótico possa pegar objetos específicos, independente de suas posições no espaço? Dessa maneira, o objetivo desse artigo é estudar e criar um braço robótico cuja função é coletar objetos, independente de qual posição eles estejam, fazendo o uso de visão computacional. Os objetivos específicos desse artigo, são o estudo e geração do reconhecimento de peças com visão computacional, a cinemática do manipulador, a programação do manipulador e a integração da câmera com o braço robótico.  A importância desse procedimento tem como consequência uma diminuição na necessidade de reprogramação desses braços robóticos, irá facilitar a programação para poder realizar tarefas ainda mais complexas, fornecendo assim economia e efetividade. Dessa forma será realizada uma pesquisa bibliográfica, acerca de braços robóticos, visão computacional e cinemática. Esse trabalho é uma pesquisa aplicada, com objetivo exploratório, por uma abordagem qualitativa.
 
-\section{Ease of Use}
+\section{Fundamentação teórica}
 
-\subsection{Maintaining the Integrity of the Specifications}
+\subsection{Identificação de objetos}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+Para poder fazer a identificação dos objetos foram escolhidos fazer o uso de marco fiduciais. Esses marcos fiduciais são imagens ou objetos usados como pontos de referencia para os robôs realizarem certas ações \cite{Fiducial26:online}. % Change this reference later, not use wikipedia.
+Com o uso desses marcadores, facilitará na hora de identificar a posição dos objeto no espaço e sua orientação.
+
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=4cm]{images/markers.jpg}
+\caption{Exemplos de tags \cite{OpenCVDe76:online}}
+\label{fig:tags}
+\end{figure}
+
+A figura \ref{fig:tags} mostra um exemplo dessas tags. Elas possuem padrões que são facilmente identificados pelas cameras e se dado as suas dimensões pode se usar algoritmos para descobrir suas coordenadas no espaço. Dessa forma foi pensado em colocar uma camera em uma posição estratégica do braço para dar uma melhor visão dos objetos e poder reconhece-los, além de usar sua posição para definir a cinemática do braço.
+
+\begin{figure}[h!]
+    \centering
+        \includegraphics[width=8cm]{images/arm_marked.jpeg}
+    \caption{Imagem do braço robótico}
+    \label{fig:cam_arm}
+\end{figure}
+
+Por questão de praticidade foi decidido usar uma webcam para captar as imagens do ambiente, essa camera sera colocada na parte sinalizada no braço robótico, explicitado na figura \ref{fig:cam_arm}. Assim será processado para onde a ferramenta esta direcionada.
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
